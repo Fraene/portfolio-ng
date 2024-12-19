@@ -1,0 +1,31 @@
+<div class="container">
+	@for(entry of items; track entry.id){
+		<div class="item">
+			<div class="header">
+				<div class="diamond"></div>
+				<div class="title">
+					<span class="name">{{ entry.name }}</span>
+					<span class="subtitle">{{ entry.subtitle }}</span>
+				</div>
+				<div class="timeframe">{{ entry.timeframe }}</div>
+			</div>
+			<div class="content">
+				<div class="description" [innerHTML]="entry.description"></div>
+				<div class="subitems">
+					@for(subitem of entry.subentries; track subitem.id){
+						<div class="subitem">
+							<div class="header">
+								<div class="notch"></div>
+								<div class="title">
+									<span class="name">{{ subitem.name }}</span>
+									<span class="timeframe">{{ subitem.timeframe }}</span>
+								</div>
+							</div>
+							<div class="description" [innerHTML]="subitem.description"></div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	}
+</div>

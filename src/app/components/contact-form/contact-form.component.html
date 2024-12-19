@@ -1,0 +1,19 @@
+<div class="container">
+	<form (submit)="submit()" onsubmit="return false;">
+		<div class="col fields-col">
+			<c-form-input label="Name" [control]="form.controls.name" />
+			<c-form-input label="Email" [control]="form.controls.email" />
+			<c-form-input label="Topic" [control]="form.controls.topic" />
+		</div>
+		<div class="col">
+			<c-form-textarea label="Message" [control]="form.controls.message" />
+		</div>
+		<div class="col captcha-col">
+			<ngx-recaptcha2 #captchaElement theme="dark" [siteKey]="captchaKey" (success)="captchaResolved($event)" />
+		</div>
+		<div class="col button-col">
+			<c-button [loading]="sending">Send</c-button>
+			<div class="message" [ngClass]="{ hidden: !showMessage, success: successMessage, error: !successMessage }">{{ message }}</div>
+		</div>
+	</form>
+</div>

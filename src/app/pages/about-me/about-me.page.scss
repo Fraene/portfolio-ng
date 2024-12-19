@@ -1,0 +1,21 @@
+.content {
+	margin: 60px 180px;
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+
+	section {
+		h2 {
+			font: 700 32px var(--secondary-font);
+			text-transform: uppercase;
+			letter-spacing: .16em;
+		}
+	}
+
+	.tech-stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 50px;
+		justify-content: center;
+	}
+}

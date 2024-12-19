@@ -1,0 +1,65 @@
+.container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 25px;
+}
+
+.photo {
+	max-width: 360px;
+	max-height: 600px;
+	object-fit: cover;
+	border: 1px solid var(--light);
+}
+
+.data {
+	.id {
+		text-transform: uppercase;
+
+		.name {
+			font: 500 64px var(--display-font);
+			background: var(--light-gradient);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			letter-spacing: .16em;
+			margin-right: -20px;
+		}
+		.surname {
+			font: 800 128px var(--display-font);
+			background: var(--light-gradient);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			letter-spacing: -.03em;
+			margin-top: -.32em;
+		}
+		.title {
+			font: 600 48px var(--secondary-font);
+			background: var(--light-gradient);
+			margin-top: -15px;
+
+			.text {
+				background: var(--dark-gradient);
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-align: center;
+				line-height: 1;
+				padding-bottom: 3px;
+			}
+		}
+	}
+	.info {
+		margin: 32px 24px;
+		font: 400 24px var(--secondary-font);
+		color: var(--light);
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		line-height: 1;
+	}
+	c-button {
+		display: block;
+		max-width: 250px;
+		margin-left: 24px;
+	}
+}

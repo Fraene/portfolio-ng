@@ -1,0 +1,9 @@
+<div class="container">
+	<input [formControl]="control" />
+	<div class="label">
+		<label>{{ label }}</label>
+		@if(!control.untouched && control.invalid){
+			<div class="errors">{{ getErrorMessage() }}</div>
+		}
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+	<img class="photo" [src]="data?.photo?.url" />
+	<div class="data">
+		<div class="id">
+			<div class="name">Sebastian</div>
+			<div class="surname">Janisz</div>
+			<div class="title"><div class="text">{{ data?.title }}</div></div>
+		</div>
+		<div class="info">
+			<div class="entry">
+				<span>{{ data?.workplace }}</span>
+			</div>
+			<div class="entry">
+				<span>{{ data?.location }}</span>
+			</div>
+		</div>
+		<c-button (onClick)="panToContact()">Contact Me</c-button>
+	</div>
+</div>

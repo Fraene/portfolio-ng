@@ -1,0 +1,4 @@
+<button [disabled]="disabled" (click)="onClick.emit()" [class.loading]="loading">
+	<div class="text"><ng-content /></div>
+	<c-spinner [size]="24" />
+</button>

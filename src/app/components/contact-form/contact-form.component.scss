@@ -1,0 +1,40 @@
+form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+}
+.fields-col {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.captcha-col {
+	display: flex;
+	justify-content: flex-end;
+}
+.button-col {
+	display: flex;
+	gap: 20px;
+
+	c-button {
+		width: 160px;
+		min-width: 160px;
+	}
+	.message {
+		transition: opacity .2s ease-in-out;
+		padding: 12px;
+		font: 400 14px var(--primary-font);
+
+		&.success {
+			background: var(--success);
+		}
+		&.error {
+			background: var(--error);
+		}
+		&.hidden {
+			opacity: 0;
+			pointer-events: none;
+			user-select: none;
+		}
+	}
+}

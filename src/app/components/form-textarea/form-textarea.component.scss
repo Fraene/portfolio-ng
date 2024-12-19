@@ -1,0 +1,46 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+textarea {
+	background: var(--nigh-dark);
+	border: none;
+	border-bottom: 1px solid var(--light);
+	width: 100%;
+	resize: none;
+	color: var(--light);
+	font: 400 14px var(--primary-font);
+	padding: 10px;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+	display: block;
+	flex-grow: 1;
+
+	&:focus {
+		outline: none;
+		background: var(--semi-dark);
+	}
+	&.ng-touched.ng-invalid {
+		border-bottom: 1px solid var(--error);
+	}
+}
+.label {
+	display: flex;
+
+	label {
+		background: var(--light);
+		color: var(--dark);
+		font: 700 11px var(--display-font);
+		letter-spacing: .16em;
+		text-transform: uppercase;
+		padding: 0 3px;
+		display: block;
+	}
+	.errors {
+		background: var(--error);
+		color: var(--light);
+		font: 400 10px var(--primary-font);
+		padding: 2px 3px 0;
+		line-height: 1;
+	}
+}

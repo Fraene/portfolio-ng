@@ -1,0 +1,51 @@
+.container {
+	position: relative;
+	width: var(--size);
+	height: var(--size);
+
+	&.light {
+		--spinner: #EEE;
+		--shadow: #EEE8;
+	}
+	&.dark {
+		--spinner: #111;
+		--shadow: #1118;
+	}
+}
+.main-spin {
+	width: var(--size);
+	height: var(--size);
+	border: var(--thickness) solid var(--spinner);
+	transform: rotate(45deg);
+	position: absolute;
+	top: 0;
+	z-index: 5;
+	animation: spin-animation 800ms infinite ease-in-out;
+}
+.shadow-spin {
+	width: var(--size);
+	height: var(--size);
+	border: var(--thickness) solid var(--shadow);
+	transform: rotate(45deg);
+	position: absolute;
+	top: 0;
+	z-index: 4;
+	animation: shadow-animation 800ms infinite ease-in-out;
+}
+
+@keyframes spin-animation {
+	from {
+		transform: rotate(45deg);
+	}
+	to {
+		transform: rotate(135deg);
+	}
+}
+@keyframes shadow-animation {
+	from {
+		transform: rotate(45deg);
+	}
+	to {
+		transform: rotate(225deg);
+	}
+}

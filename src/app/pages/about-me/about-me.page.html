@@ -1,0 +1,30 @@
+@if(data){
+	<c-crt-header text="About me" />
+	<c-id-section [data]="data" />
+	<div class="content">
+		<section>
+			<h2>Summary</h2>
+			<p [innerHTML]="data.summary"></p>
+		</section>
+		<section>
+			<h2>Tech stack</h2>
+			<div class="tech-stack">
+				@for(tech of data.techStack; track tech.id){
+					<c-subtitled-image [imgSrc]="tech.image.url" [label]="tech.label" />
+				}
+			</div>
+		</section>
+		<section>
+			<h2>Work history</h2>
+			<c-timeline [items]="data.workHistory" />
+		</section>
+		<section>
+			<h2>Education</h2>
+			<c-timeline [items]="data.education" />
+		</section>
+		<section id="contact">
+			<h2>Contact Me</h2>
+			<c-contact-form />
+		</section>
+	</div>
+}

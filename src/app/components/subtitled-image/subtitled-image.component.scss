@@ -1,0 +1,35 @@
+.container {
+	position: relative;
+
+	&:hover {
+		.label {
+			opacity: 1;
+		}
+	}
+
+	.label {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 0 10px 10px;
+		font: 600 14px var(--display-font);
+		color: var(--light);
+		background: #1116;
+		opacity: 0;
+		transition: opacity .2s ease-in-out;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.line {
+			width: 80%;
+			max-width: 80px;
+			height: 1px;
+			background: linear-gradient(to right, transparent, var(--light), transparent);
+		}
+		span {
+			text-shadow: 0 0 4px #0006;
+		}
+	}
+}
