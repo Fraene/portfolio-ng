@@ -4,12 +4,12 @@
 	align-items: center;
 	justify-content: center;
 	position: fixed;
-	z-index: 100;
+	z-index: 9;
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: var(--light-gradient);
+	background: var(--dark-gradient);
 	transition: opacity .8s ease-in-out;
 
 	&.hidden {
@@ -22,11 +22,11 @@
 		height: 1px;
 		width: 20%;
 		min-width: 100px;
-		background: linear-gradient(to right, transparent, var(--dark), transparent);
+		background: linear-gradient(to right, transparent, var(--light), transparent);
 	}
 	.text {
 		font: 600 14px var(--display-font);
-		color: var(--dark);
+		color: var(--light);
 		margin-top: 8px;
 		letter-spacing: .2em;
 		text-transform: uppercase;
