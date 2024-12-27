@@ -56,6 +56,12 @@
 		flex-direction: column;
 		gap: 16px;
 		line-height: 1;
+
+		.entry {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
 	}
 	c-button {
 		display: block;

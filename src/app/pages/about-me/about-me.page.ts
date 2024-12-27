@@ -20,18 +20,20 @@ export class AboutMePage implements OnInit {
 
 	public ngOnInit(): void {
 		this.loader.show();
+		const startTime = Date.now();
 
 		this.strapi.fetchAboutMe().subscribe({
 			next: res => {
 				this.data = res.data;
-				this.loading = false;
-				this.loader.hide();
 			},
 			error: err => {
 				console.error(err);
-				this.loading = false;
-				this.loader.hide();
 			}
-		})
+		}).add(() => {
+			this.loading = false;
+			const endTime = Date.now();
+
+			setTimeout(() => this.loader.hide(), 1000 - (endTime - startTime));
+		});
 	}
 }

@@ -11,7 +11,7 @@ export class CrtHeaderComponent implements OnInit {
 	public actualText = '';
 	public displayCursor = false;
 
-	private readonly animationDelay = 800;
+	private readonly animationDelay = 1200;
 	private readonly animationInterval = 100;
 	private readonly animationIntervalJitter = 50;
 	private readonly cursorFlashLength = 50;

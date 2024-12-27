@@ -1,2 +1,25 @@
 <c-crt-header text="Projects" />
-TBD
+@if(!loading){
+<div class="content">
+	@for(project of data; track project.id){
+		<div class="project">
+			<div class="thumbnail-links">
+				<img [src]="project.thumbnail?.url ?? defaultThumbnail" />
+				<div class="links">
+					@if(project.githubUrl){ <c-button (onClick)="openUrl(project.githubUrl)">Github</c-button> }
+				</div>
+			</div>
+			<div class="data">
+				<h2>{{ project.title }}</h2>
+				<div class="groups">
+					@for(group of project.projectGroups; track group.id){
+						<div class="group">{{ group.name }}</div>
+					}
+				</div>
+				<div class="description" [innerHTML]="project.description"></div>
+				<div class="links"></div>
+			</div>
+		</div>
+	}
+</div>
+}

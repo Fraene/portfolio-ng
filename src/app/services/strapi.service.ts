@@ -5,6 +5,7 @@ import { StrapiData } from '../interfaces/strapi/strapi-data';
 import { AboutMeData } from '../interfaces/about-me-data';
 import { ContactForm } from '../interfaces/contact-form';
 import { FormGroup } from '@angular/forms';
+import { Project } from '../interfaces/project';
 
 @Injectable({
 	providedIn: 'root'
@@ -22,5 +23,9 @@ export class StrapiService {
 
 	public sendContactForm(data: FormGroup<ContactForm>){
 		return this.http.post(`${API.url}/api/contact`, data.value);
+	}
+
+	public fetchProjects(){
+		return this.http.get<StrapiData<Project[]>>(`${API.url}/api/projects?populate=*`);
 	}
 }

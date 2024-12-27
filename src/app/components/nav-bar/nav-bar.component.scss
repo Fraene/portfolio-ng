@@ -40,6 +40,14 @@
 				font: 600 24px var(--display-font);
 				text-transform: uppercase;
 				cursor: pointer;
+				text-decoration: none;
+				color: inherit;
+				transition: text-shadow .2s ease-in-out, transform .2s ease-in-out;
+
+				&:hover {
+					text-shadow: 0 0 8px var(--semi-light);
+					transform: scale(1.05);
+				}
 			}
 		}
 		.line {
