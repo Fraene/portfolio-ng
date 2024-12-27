@@ -9,8 +9,8 @@ import { LoaderService } from '../../services/loader.service';
 	styleUrls: [ './fullscreen-loader.component.scss' ]
 })
 export class FullscreenLoaderComponent {
-	public display = false;
-	public show = false;
+	public display = true;
+	public show = true;
 	public message = 'Loading';
 
 	constructor(
