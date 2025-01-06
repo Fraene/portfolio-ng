@@ -11,10 +11,12 @@ export class CrtHeaderComponent implements OnInit {
 	public actualText = '';
 	public displayCursor = false;
 
-	private readonly animationDelay = 1200;
-	private readonly animationInterval = 100;
-	private readonly animationIntervalJitter = 50;
-	private readonly cursorFlashLength = 50;
+	public readonly animationDelay = 1200;
+	public readonly animationInterval = 100;
+	public readonly animationIntervalJitter = 50;
+	public readonly cursorFlashLength = 50;
+
+	public randomizer: () => number = Math.random;
 
 	public ngOnInit() {
 		this.AnimateText();
@@ -31,7 +33,7 @@ export class CrtHeaderComponent implements OnInit {
 				this.actualText += this.text[i];
 
 				if(i !== this.text.length - 1) {
-					const jitter = (Math.random() * this.animationIntervalJitter * 2) - this.animationIntervalJitter;
+					const jitter = (this.randomizer() * this.animationIntervalJitter * 2) - this.animationIntervalJitter;
 
 					setTimeout(() => animationStep(i + 1), this.animationInterval + jitter);
 				}

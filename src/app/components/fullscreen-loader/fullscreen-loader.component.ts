@@ -13,6 +13,8 @@ export class FullscreenLoaderComponent {
 	public show = true;
 	public message = 'Loading';
 
+	private fadeTimeout?: any;
+
 	constructor(
 		public loader: LoaderService
 	){
@@ -20,11 +22,13 @@ export class FullscreenLoaderComponent {
 			const visible = this.loader.isVisible();
 
 			if(visible && !this.show){
+				clearTimeout(this.fadeTimeout);
 				this.display = true;
-				setTimeout(() => this.show = true);
+				this.fadeTimeout = setTimeout(() => this.show = true);
 			} else if(!visible && this.show){
+				clearTimeout(this.fadeTimeout);
 				this.show = false;
-				setTimeout(() => this.display = false, 800);
+				this.fadeTimeout = setTimeout(() => this.display = false, 800);
 			}
 		})
 	}

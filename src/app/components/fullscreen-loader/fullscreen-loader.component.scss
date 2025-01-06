@@ -31,4 +31,9 @@
 		letter-spacing: .2em;
 		text-transform: uppercase;
 	}
+
+	// If it works, it works
+	@media (max-width: 768px) {
+		zoom: 2.23;
+	}
 }

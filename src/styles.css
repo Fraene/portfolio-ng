@@ -30,4 +30,9 @@ body {
 	background: linear-gradient(to right, #1A1A1A 0%, #111 20%, #111 80%, #1A1A1A 100%);
 	color: var(--light);
 	font-family: var(--primary-font);
+
+	/* TODO: Actual mobile styling */
+	@media (max-width: 768px) {
+		zoom: 0.45;
+	}
 }
